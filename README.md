@@ -1,4 +1,4 @@
-# Dev Joke Bot — Upgraded 🎉🤖
+# Dev Joke Bot - Upgraded 🎉🤖
 
 This is a **funny** upgrade of the original Dev Joke Bot — now with GIFs, better jokes, and a daily README that changes like your mood after reading stack traces.
 
