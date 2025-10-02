@@ -1,0 +1,28 @@
+name: Daily Joke + README Update
+on:
+  schedule:
+    - cron: '0 12 * * *' # run daily at 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run update script (generates README and commits)
+        env:
+          GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
+          TENOR_API_KEY: ${{ secrets.TENOR_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER_GITHUB: ${{ secrets.OWNER_GITHUB }}
+          REPO_NAME: ${{ secrets.REPO_NAME }}
+        run: node src/updateReadme.js

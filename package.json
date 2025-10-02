@@ -1,0 +1,17 @@
+{
+  "name": "dev-joke-bot-upgrade",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "tweet": "node src/tweetAndUpdate.js",
+    "update-readme": "node src/updateReadme.js",
+    "lint": "echo \"no lint configured\""
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "twitter-api-v2": "^1.16.0",
+    "@octokit/rest": "^19.0.7",
+    "dotenv": "^16.3.1",
+    "dayjs": "^1.11.9"
+  }
+}
